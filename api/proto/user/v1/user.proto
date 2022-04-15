@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+//TODO: recorrect it like githubXXXXX
+option go_package = "userserver/api/proto/user/v1/user;";
+
+package user;
+
+//Service Definition
+service UserService {
+    rpc Login(LoginRequest) returns (LoginReply);
+    rpc Logout(LogoutRequest) returns (LogoutReply);
+
+    rpc GetUser(GetUserRequest) returns (GetUserReply);
+    rpc SetUser(SetUserRequest) returns (SetUserReply);
+    rpc AddUser(AddUserRequest) returns (AddUserReply);
+}
+
+message StringNil {
+    string data = 1;
+}
+
+message LoginRequest {
+    string username = 1;
+    string passwd = 2;
+}
+
+message LoginReply {
+    string userid = 1;
+    string token = 2;
+    int64 auth = 3;
+}
+
+message LogoutRequest {
+    string userid = 1;
+    string token = 2;
+}
+
+message LogoutReply {
+}
+
+message GetUserRequest {
+    string userid = 1;
+}
+
+message GetUserReply {
+    string userid = 2;
+    string username = 3;
+    string desc = 4;
+}
+
+message SetUserRequest {
+    string userid = 1;
+    StringNil username = 2;
+    StringNil desc = 3;    
+}
+
+message SetUserReply {
+}
+
+message AddUserRequest {
+    StringNil username = 1;
+    StringNil desc = 2;    
+}
+
+message AddUserReply {
+    string userid = 1;
+}
+

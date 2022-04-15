@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+//TODO: USING protoc-gen-go-errors IN THE RIGHT WAY!!!
+
+//TODO: recorrect it like githubXXXXX
+option go_package = "userserver/api/proto/rpc;";
+
+package rpc;
+
+// @plugins=protoc-gen-go-errors
+enum ERR {
+    OK             = 0; // OK
+
+    CLIENT_ERROR   = 100000; // Client's Side Error
+    INVALID_PARAMS = 100001; // Invalid Parameters
+    CANCELLED      = 100002; // Cancelled
+    
+    SERVER_ERROR        = 200000; //Server's Side Error
+    RESOURCES_TIMEOUT   = 200001; //get resources timeout
+    IMPLEMENTED         = 200002; //Implemented
+}

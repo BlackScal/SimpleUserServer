@@ -1,0 +1,8 @@
+appid: user-service
+addr:
+  ip: localhost
+  port: 50051
+log:
+  level: info
+  output: console
+  format: plain

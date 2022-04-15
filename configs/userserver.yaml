@@ -1,0 +1,15 @@
+appid: user-server
+addr:
+  ip: localhost
+  port: 8080
+log:
+  level: info
+  output: console
+  format: plain
+userservice:
+  ip: localhost
+  port: 50051
+redis:
+  ip: 192.168.8.209
+  port: 6379
+  db: 0
