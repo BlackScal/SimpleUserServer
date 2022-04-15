@@ -50,6 +50,6 @@ func main() {
 	server.SetRPCServer(grpcServer)
 	err := server.Run()
 	if err != nil {
-		log.Error(log.LogFields{"server": "userrpcserver"}, err.Error()) //TODO
+		log.Error(log.LogFields{}, err.Error()) //TODO
 	}
 }
